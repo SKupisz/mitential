@@ -1,0 +1,72 @@
+import React from 'react';
+import ReactDOM from "react-dom";
+import { VectorMap } from 'react-jvectormap';
+import Flag from "react-flagkit";
+import ExampleComponent from "./test.jsx";
+
+const { getCode, getName, getData } = require("country-list");
+const total = {
+    PL: 110000,
+}
+const landSoldiers = {
+    PL: 48000,
+  };
+const airForces = {
+    PL: 800
+}
+const tanks = {
+    PL: 865
+}
+export default class MainMap extends React.Component{
+    constructor(props){
+        super(props);
+        this.GiveTheData = this.GiveTheData.bind(this);
+    }
+    GiveTheData(e, countryCode){ 
+        let countryTotal = React.createElement("div",{className: "army-quantity total"},"Total soldiers: "+total[countryCode]);
+        let countryLandSoldiers = React.createElement("div",{className: "army-quantity land-soldiers"},"Land soldiers: "+landSoldiers[countryCode]);
+        let countryAirForce = React.createElement("div",{className: "army-quantity air-forces"},"Airplanes: "+airForces[countryCode]);
+        let countryTanks = React.createElement("div",{className: "army-quantity tanks"}, "Tanks: "+tanks[countryCode]);
+
+        let title = React.createElement("header",{className: "army-header"}, getName(countryCode));
+        let flag = <Flag className = "countryFlag" size = {30} country = {countryCode}/>
+        let describe = React.createElement("div",{className: "country-content"},[countryTotal,countryLandSoldiers,countryAirForce,countryTanks]);
+
+        let toAdd = React.createElement(
+            "div",
+            {className: "selectedArmy-content"},
+            [title,flag,describe]
+        );
+        ReactDOM.render(
+            toAdd,
+            document.querySelector(".adding-space")
+        )
+    }
+    render(){
+        return(        
+        <div className="map-container">
+                  <VectorMap
+        map = {"world_mill"}
+        backgroundColor = "transparent"
+        zoomOnScroll={false}
+        containerStyle={{
+          width: "100%",
+          height: "520px"
+        }}
+        onRegionClick={this.GiveTheData}
+        containerClassName="map"
+        regionStyle = {{
+            initial: {
+                fill: "#ccc",
+                "fill-stroke": "#111",
+            },
+            hover: {
+                fill: "#1999ff"
+            }
+        }}
+        regionsSelectable={true}/>
+            <ExampleComponent/>
+        </div>);
+
+    }
+}
