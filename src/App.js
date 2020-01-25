@@ -1,19 +1,12 @@
 import React from 'react';
-import MainMap from "./components/main.jsx";
+import Routing from "./components/routing.jsx";
 
 import './App.css';
-import "./css/map.scss";
+import "./css/main.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className = "main-header">
-        Military potential
-      </header>
-      <MainMap/>
-      <section className="adding-space">
-      </section>
-    </div>
+    <Routing/>
   );
 }
 
