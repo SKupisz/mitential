@@ -5,7 +5,7 @@ export default class Describe extends React.Component{
     render(){
         return(
             <section className="describe-content">
-                <header className="main-header">Military potential</header>
+                <header className="main-header">Mitential</header>
                 <div className="short-describe">
                     <header className="short-describe-header">What is it?</header>
                     <div className="short-describe-content">It's a simple app to check the speculated military potential of the country you want to</div>
