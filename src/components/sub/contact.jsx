@@ -6,8 +6,8 @@ export default class Contact extends React.Component{
             <section className="contact-section">
                 <header className="main-header">Contact us</header>
                 <div className="contact-container">
-                    <div className="contact-item facebook">Facebook: lorem ipsum</div>
-                    <div className="contact-item github">Github: lorem ipsum</div>
+                    <div className="contact-item facebook">Facebook: <a href = "https://www.facebook.com/SGK-news-1990120751057327/">https://www.facebook.com/SGK-news-1990120751057327/</a></div>
+                    <div className="contact-item github">Github: <a href = "https://github.com/SKupisz/mitential">https://github.com/SKupisz/mitential</a></div>
                 </div>
             </section>
         );
