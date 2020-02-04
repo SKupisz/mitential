@@ -12,7 +12,7 @@ export default class Routing extends React.Component{
             <div className="App">
                 <Router>
                 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-                    <Link to = "/"><button className="navbar-main">Mitenial</button></Link>
+                    <Link to = "/"><button className="navbar-main">Mitential</button></Link>
                     <Link to = "/map"><button className="nav-button map-button">Map</button></Link>
                     <Link to = "/about"><button className ="nav-button about-button">About us</button></Link>
                     <Link to = "/contact"><button className="nav-button contant">Contact us</button></Link>
